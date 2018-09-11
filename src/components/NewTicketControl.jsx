@@ -14,12 +14,12 @@ class NewTicketControl extends React.Component {
   }
 
   handleTroubleshootingConfirmation(){
-    this.setState({formVisibleOnPage: true});
+    this.setState({formVisableOnPage: true});
   }
 
   render(){
     let currentlyVisableContent = null;
-    if (this.state.formVisibleOnPage){
+    if (this.state.formVisableOnPage){
       currentlyVisableContent = <NewTicketForm onNewTicketCreation={this.props.onNewTicketCreation}/>;
     } else {
       currentlyVisableContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation}/>;

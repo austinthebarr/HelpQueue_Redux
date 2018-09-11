@@ -10,7 +10,7 @@ const ConfirmationQuestions = (props) => {
   );
 };
 
-ConfirmationQuestions.propTyeps = {
+ConfirmationQuestions.propTypes = {
   onTroubleshootingConfirmation: PropTypes.func
 };
 
