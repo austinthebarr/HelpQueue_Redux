@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "prop-types": "^15.5.10",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.0.0",
