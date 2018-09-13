@@ -7,19 +7,25 @@ function TicketList(props){
   return(
     <div>
       <hr/>
-      {props.ticketList.map((ticket) =>
-        <Ticket names={ticket.names}
+      {Object.keys(props.ticketList).map((ticketId) => {
+        let ticket = props.ticketList[ticketId];
+        return <Ticket names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
-          key={ticket.id}/>
-      )}
+          currentRouterPath={props.currentRouterPath}
+          onTicketSelection={props.onTicketSelection}
+          key={ticketId}
+          ticketId={ticketId}/>;
+      })}
     </div>
   );
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array
+  ticketList: PropTypes.object,
+  currentRouterPath: PropTypes.string,
+  onTicketSelection: PropTypes.func,
 };
 
 export default TicketList;
