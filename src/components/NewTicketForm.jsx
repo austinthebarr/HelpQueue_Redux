@@ -10,6 +10,7 @@ const NewTicketForm = (props) => {
   let _issue = null;
 
   function handleNewTicketFormSubmission(event) {
+    console.log(props);
     const { dispatch } = props;
     event.preventDefault();
     const action = {
@@ -18,7 +19,8 @@ const NewTicketForm = (props) => {
       names: _names.value,
       location: _location.value,
       issue: _issue.value,
-      timeOpen: new Moment()
+      timeOpen: new Moment(),
+      formattedWaitTime: new Moment().fromNow(true)
     };
     dispatch(action);
     _names.value = '';
